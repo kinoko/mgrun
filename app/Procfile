@@ -1,0 +1,2 @@
+runner: gitlab-runner run
+mgrun: node main.js

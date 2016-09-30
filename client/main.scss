@@ -1,3 +1,12 @@
 
 @import "{poetic:materialize-scss}/sass/materialize.scss";
 
+.actions-button {
+  bottom: 45px;
+  right: 24px;
+}
+
+.add-runner .modal {
+  width: 75%;
+  max-height: 88%;
+}

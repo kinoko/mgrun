@@ -1,0 +1,13 @@
+#!/bin/bash
+
+export MONGO_URL=${MONGO_URL:-"mongodb://mongo:27017/mgrun"}
+export ROOT_URL=${ROOT_URL:-'http://localhost'}
+export PORT=${PORT:-80}
+
+export GITLAB_HOST=${GITLAB_HOST:-"http://localhost"}
+export GITLAB_APP_ID=${GITLAB_APP_ID:-""}
+export GITLAB_APP_SECRET=${GITLAB_APP_SECRET:-""}
+
+node main.js &
+
+exec gitlab-runner "$@"

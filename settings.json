@@ -1,0 +1,13 @@
+{
+  "public": {
+    "gitlabHost": "http://localhost:8080",
+    "defaultLinks": [
+      "gitlab:gitlab",
+      "web_proxy:git.mdl.cs.tsukuba.ac.jp",
+      "web_proxy:ci.mdl.cs.tsukuba.ac.jp"
+    ]
+  },
+  "gitlabAppId": "e88dc8d7d00be54538f4b95f17c39ab94840fd197d74275950d915b816af7f4b",
+  "gitlabAppSecret": "2952f622f676cc72e5fd57071ed34541f9801fba26a89cb90e39263d7600c9b5",
+  "runnerConfigPath": "/Users/kazuto/.gitlab-runner/config.toml"
+}

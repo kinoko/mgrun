@@ -17,6 +17,7 @@ if (Meteor.isClient) {
     forOtherUsers: [
       'services.gitlab.id',
       'services.gitlab.name',
+      'services.gitlab.isAdmin',
     ]
   });
 }

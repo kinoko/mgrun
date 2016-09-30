@@ -5,13 +5,21 @@ Oauth.registerService('gitlab', 2, null, function(query) {
   let accessToken = token.access_token;
   let userInfo = getUserInfo(accessToken);
 
+  let profile = {
+    id: userInfo.id,
+    name: userInfo.name,
+    username: userInfo.username,
+    isAdmin: userInfo.is_admin
+  };
+  var serviceData = {
+    accessToken: token.access_token,
+    refreshToken: token.refresh_token
+  };
+  _.extend(serviceData, profile);
+
   return {
-    serviceData: {
-      id: userInfo.id,
-      name: userInfo.name,
-      isAdmin: userInfo.is_admin, 
-      accessToken: accessToken
-    }
+    serviceData: serviceData,
+    options: { profile: profile }
   };
 });
 
