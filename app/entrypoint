@@ -10,9 +10,11 @@ export GITLAB_APP_SECRET=${GITLAB_APP_SECRET:-""}
 export DEFAULT_LINKS=${DEFAULT_LINKS:-""}
 
 quotateArray() {
-  ARGS=$@;
-  QUOTED=$(printf "\"%s\" " ${ARGS[@]});
-  echo $(ARY=($QUOTED); IFS=,; echo "${ARY[*]}");
+  if [ ! -z "$@"  ]; then
+    ARGS=$@;
+    QUOTED=$(printf "\"%s\" " ${ARGS[@]});
+    echo $(ARY=($QUOTED); IFS=,; echo "${ARY[*]}");
+  fi
 }
 
 export QUOTED_DEFAULT_LINKS=$(quotateArray $DEFAULT_LINKS)
@@ -24,10 +26,12 @@ cat << EOF > settings.json
     "defaultLinks": [${QUOTED_DEFAULT_LINKS}]
   },
   "gitlabAppId": "${GITLAB_APP_ID}",
-  "gitlabAppSecret": "${GITLAB_APP_SECRET}"
+  "gitlabAppSecret": "${GITLAB_APP_SECRET}",
   "runnerConfigPath": "/etc/gitlab-runner/config.toml"
 }
 EOF
+
+export METEOR_SETTINGS="$(cat settings.json)"
 
 node main.js &
 

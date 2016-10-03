@@ -2,6 +2,8 @@
 
 set -x
 
+touch /etc/gitlab-runner/config.toml
+
 apk --update --no-cache add --virtual build-dependencies build-base python
 
 (cd programs/server && npm install)
