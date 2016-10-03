@@ -7,6 +7,27 @@ export PORT=${PORT:-80}
 export GITLAB_HOST=${GITLAB_HOST:-"http://localhost"}
 export GITLAB_APP_ID=${GITLAB_APP_ID:-""}
 export GITLAB_APP_SECRET=${GITLAB_APP_SECRET:-""}
+export DEFAULT_LINKS=${DEFAULT_LINKS:-""}
+
+quotateArray() {
+  ARGS=$@;
+  QUOTED=$(printf "\"%s\" " ${ARGS[@]});
+  echo $(ARY=($QUOTED); IFS=,; echo "${ARY[*]}");
+}
+
+export QUOTED_DEFAULT_LINKS=$(quotateArray $DEFAULT_LINKS)
+
+cat << EOF > settings.json
+{
+  "public": {
+    "gitlabHost": "${GITLAB_HOST}",
+    "defaultLinks": [${QUOTED_DEFAULT_LINKS}]
+  },
+  "gitlabAppId": "${GITLAB_APP_ID}",
+  "gitlabAppSecret": "${GITLAB_APP_SECRET}"
+  "runnerConfigPath": "/etc/gitlab-runner/config.toml"
+}
+EOF
 
 node main.js &
 

@@ -1,0 +1,4 @@
+node_modules/
+.bin/
+app/mgrun.tar.gz
+settings.json

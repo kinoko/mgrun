@@ -1,4 +1,4 @@
-node_modules
 .git
-.meteor
-.bin/
+mgrun/node_modules
+mgrun/.meteor
+mgrun/.bin/
