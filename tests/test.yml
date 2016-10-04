@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  connection: local
+  roles:
+   - role: ../..
+     mgrun_conf_path: "{{ansible_env.PWD}}/tests/mgrun"
+     mongo_data_path: "{{ansible_env.PWD}}/tests/mongo"

@@ -1,0 +1,6 @@
+---
+mgrun_conf_path: /var/lib/mgrun
+mgrun_listen_ip: 0.0.0.0
+mgrun_port: 5000
+gitlab_url: https://git.example.com
+mongo_data_path: /var/lib/mongo
