@@ -9,9 +9,9 @@
     "jquery": "^3.1.0",
     "jquery-serializejson": "^2.7.2",
     "meteor-node-stubs": "^0.2.3",
-    "react": "^15.2.1",
+    "react": "^15.3.2",
     "react-addons-pure-render-mixin": "^15.2.1",
-    "react-dom": "^15.2.1",
+    "react-dom": "^15.3.2",
     "react-mixin": "^2.0.2",
     "toml": "^2.3.0"
   },
