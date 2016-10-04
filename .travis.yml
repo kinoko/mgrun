@@ -8,7 +8,7 @@ before_install:
   - curl https://install.meteor.com | /bin/sh
   - npm install -g meteorite laika
 install:
-  - meteor npm install
+  - cd ./mgrun && meteor npm install && cd ../
 script:
   - make
 after_success:
