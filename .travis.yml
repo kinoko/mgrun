@@ -1,0 +1,16 @@
+sudo: required
+language: node_js
+node_js:
+  - 6
+services:
+  - docker
+before_install:
+  - curl https://install.meteor.com | /bin/sh
+  - npm install -g meteorite laika
+script:
+  - make
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker push kinoko/mgrun;
+    fi
