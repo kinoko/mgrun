@@ -1,5 +1,7 @@
 # mgrun
 
+[![Build Status](https://travis-ci.org/kinoko/mgrun.svg?branch=master)](https://travis-ci.org/kinoko/mgrun)
+
 A docker-based multi runners for gitlab with web-based management.
 
 # Usage
