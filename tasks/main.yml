@@ -19,7 +19,7 @@
     links:
       - "mongo:mongo"
     env:
-      ROOT_URL: "{{ mgrun_url | default('http://%s:%d' % (mgrun_listen_ip, mgrun_port) }}"
+      ROOT_URL: "{{ mgrun_url | default('http://%s:%d' % (mgrun_listen_ip, mgrun_port)) }}"
       GITLAB_HOST: "{{ gitlab_url }}"
       GITLAB_APP_ID: "{{ gitlab_app_id | default('') }}"
       GITLAB_APP_SECRET: "{{ gitlab_app_secret | default('') }}"
